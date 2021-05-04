@@ -1,0 +1,134 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "Ubuntu", sans-serif;
+}
+header nav.navbar {
+  padding: 50px 0;
+}
+header nav.navbar .navbar-brand {
+  font-size: 30px;
+}
+header nav.navbar .navbar-brand i {
+  color: #009ad8;
+  font-size: 30px;
+}
+header nav .collapse.navbar-collapse .navbar-nav li.nav-item {
+  padding: 0 10px;
+}
+header nav .collapse.navbar-collapse .navbar-nav li.nav-item .nav-link {
+  padding: 5px 25px;
+  border: 2px solid transparent;
+  border-radius: 30px;
+  color: white;
+  transition: border-color 0.3s ease-in-out, color 0.3s ease-in-out;
+  font-weight: 400;
+}
+header nav .collapse.navbar-collapse .navbar-nav li.nav-item.active .nav-link {
+  border-color: #009ad8;
+  color: #009ad8;
+}
+header nav .collapse.navbar-collapse .navbar-nav li.nav-item .nav-link:hover {
+  border-color: #009ad8;
+  color: #009ad8;
+}
+/*home*/
+.home {
+  padding: 70px 0;
+  min-height: 350px;
+  background-image: url(../img/banner.png);
+  background-size: cover;
+  background-position: center center;
+}
+.home .search {
+  position: relative;
+}
+.home .search .form-control {
+  height: auto;
+  outline: none;
+  border: none;
+  border-radius: 30px;
+  padding: 20px 50px 20px 20px;
+  background: #1e202b;
+  color: white;
+}
+.home .search .btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  bottom: 5px;
+  border-radius: 30px;
+  padding: 0 40px;
+}
+/*weather*/
+.weather {
+  background-color: #323544;
+}
+.weather .row-box {
+  margin-top: -150px;
+  margin-bottom: 50px;
+  width: 100%;
+}
+.weather .row-box .weather-item .card {
+  border: 0;
+  border-radius: 0;
+  min-height: 400px;
+}
+.weather .row-box .weather-item .card .card-header {
+  border: 0;
+  border-radius: 0;
+}
+.weather .row-box .weather-item .card .card-body .card-title {
+  margin-bottom: 0;
+}
+.weather .row-box .weather-item .card .card-body .card-title .today-city {
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+.weather .row-box .weather-item .card .card-body .card-title .today-degree {
+  font-size: 6.5rem;
+  font-weight: 600;
+}
+.weather .row-box .weather-item .card .card-body .card-title.degree {
+  font-size: 2rem;
+  font-weight: 700;
+}
+.weather .row-box .weather-item .card .card-body .status {
+  margin: 20px 0;
+}
+.weather .row-box .weather-item .card .card-body small {
+  font-size: 1.2rem;
+}
+/*footer*/
+footer {
+  background-color: #262936;
+  padding: 50px 0;
+}
+footer .container .subscribe {
+  position: relative;
+}
+footer .container .subscribe .form-control {
+  height: auto;
+  outline: none;
+  border: none;
+  border-radius: 30px;
+  padding: 20px 50px 20px 20px;
+  background: #1e202b;
+  color: white;
+}
+footer .container .subscribe .btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  bottom: 5px;
+  border-radius: 30px;
+  padding: 0 40px;
+}
+footer .container .social-links a {
+  border-radius: 50%;
+  margin: 0 8px;
+}
