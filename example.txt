@@ -4,7 +4,7 @@ https://api.weatherapi.com/v1/current.json?key=05529798d3334e4c99333633210205&q=
 
 7 day
 
-https://api.weatherapi.com/v1/forecast.json?key=05529798d3334e4c99333633210205&q=Cairo&days=7
+https://api.weatherapi.com/v1/forecast.json?key=05529798d3334e4c99333633210205&q=Cairo&days=2
 
 search
 

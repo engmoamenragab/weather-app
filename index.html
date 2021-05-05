@@ -37,7 +37,7 @@
         <div class="row">
           <div class="col">
             <div class="search">
-              <input class="form-control mr-sm-2" type="search" placeholder="Find your location..." aria-label="Search" />
+              <input id="searchWeather" class="form-control mr-sm-2" type="search" placeholder="Find your location..." aria-label="Search" />
               <button class="btn btn-primary my-2 my-sm-0" type="submit">Find</button>
             </div>
           </div>
@@ -52,59 +52,13 @@
           <div class="row-box">
             <div class="row">
               <div class="col-lg-4 py-2 px-0">
-                <div class="weather-item">
-                  <div class="card text-white">
-                    <div class="card-header bg-dark d-flex justify-content-between">
-                      <div class="day">Saturday</div>
-                      <div class="date">5 MAY</div>
-                    </div>
-                    <div class="card-body bg-secondary">
-                      <div class="card-title degree">
-                        <h6 class="today-city">Cairo</h6>
-                        <h4 class="today-degree">39<sup>o</sup>C</h4>
-                        <div class="weather-item-icon">
-                          <img src="" alt="" />
-                        </div>
-                      </div>
-                      <p class="card-text">Partly Cloud</p>
-                      <div class="status-icon">
-                        <span class="mr-3"><img src="" alt="" />20%</span>
-                        <span class="mr-3"><img src="" alt="" />18 km/h</span>
-                        <span class="mr-3"><img src="" alt="" />East</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <div id="today" class="today weather-item"></div>
               </div>
               <div class="col-lg-4 py-2 px-0">
-                <div class="weather-item">
-                  <div class="card text-white">
-                    <h5 class="card-header bg-secondary text-center">Sunday</h5>
-                    <div class="card-body bg-dark text-center">
-                      <div class="weather-item-icon">
-                        <img src="" alt="" class="mb-5 p-3" />
-                      </div>
-                      <h5 class="card-title degree">39<sup>o</sup>C</h5>
-                      <small>25<sup>o</sup>C</small>
-                      <p class="card-text status">Partly Cloud</p>
-                    </div>
-                  </div>
-                </div>
+                <div id="nextDay" class="nextDay weather-item"></div>
               </div>
               <div class="col-lg-4 py-2 px-0">
-                <div class="weather-item">
-                  <div class="card text-white">
-                    <h5 class="card-header bg-dark text-center">Monday</h5>
-                    <div class="card-body bg-secondary text-center">
-                      <div class="weather-item-icon">
-                        <img src="" alt="" class="mb-5 p-3" />
-                      </div>
-                      <h5 class="card-title degree">39<sup>o</sup>C</h5>
-                      <small>25<sup>o</sup>C</small>
-                      <p class="card-text status">Partly Cloud</p>
-                    </div>
-                  </div>
-                </div>
+                <div id="next2Day" class="next2Day weather-item"></div>
               </div>
             </div>
           </div>
