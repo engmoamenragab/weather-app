@@ -1,10 +1,13 @@
-let days = ["Sunday", "Monday", "Tuesday", "wednesday", "Thursday", "Friday", "Saturday"],
-  months = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"],
-  d = new Date();
+let months = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"],
+  d = new Date(),
+  todayWeather,
+  nextDayWeather,
+  next2DayWeather;
 async function getWeather(city = "London") {
-  let response = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=05529798d3334e4c99333633210205&q=${city}&days=2`),
+  let response = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=05529798d3334e4c99333633210205&q=${city}&days=3`),
     responseData = await response.json();
   todayWeather = {
+    date: getDayName(responseData.forecast.forecastday[0].date),
     location: responseData.location.name,
     degree: responseData.current.temp_c,
     condition: {
@@ -16,16 +19,7 @@ async function getWeather(city = "London") {
     windKph: responseData.current.wind_kph
   };
   nextDayWeather = {
-    degree: {
-      maxDegree: responseData.forecast.forecastday[0].day.maxtemp_c,
-      minDegree: responseData.forecast.forecastday[0].day.mintemp_c
-    },
-    condition: {
-      icon: responseData.forecast.forecastday[0].day.condition.icon,
-      text: responseData.forecast.forecastday[0].day.condition.text
-    },
-  };
-  next2DayWeather = {
+    date: getDayName(responseData.forecast.forecastday[1].date),
     degree: {
       maxDegree: responseData.forecast.forecastday[1].day.maxtemp_c,
       minDegree: responseData.forecast.forecastday[1].day.mintemp_c
@@ -35,17 +29,60 @@ async function getWeather(city = "London") {
       text: responseData.forecast.forecastday[1].day.condition.text
     },
   };
+  next2DayWeather = {
+    date: getDayName(responseData.forecast.forecastday[2].date),
+    degree: {
+      maxDegree: responseData.forecast.forecastday[2].day.maxtemp_c,
+      minDegree: responseData.forecast.forecastday[2].day.mintemp_c
+    },
+    condition: {
+      icon: responseData.forecast.forecastday[2].day.condition.icon,
+      text: responseData.forecast.forecastday[2].day.condition.text
+    },
+  };
   displayTodayWeather();
   displayNextDayWeather();
   displayNext2DayWeather();
 }
 getWeather("Cairo");
+//ANCHOR get day name
+function getDayName(dateInNumbers) {
+  let d = new Date(dateInNumbers),
+    x = d.getDay(),
+    dayName = "";
+  switch (x) {
+    case (0):
+      dayName = "Sunday";
+      break;
+    case (1):
+      dayName = "Monday";
+      break;
+    case (2):
+      dayName = "Tuesday";
+      break;
+    case (3):
+      dayName = "Wednesday";
+      break;
+    case (4):
+      dayName = "Thrusday";
+      break;
+    case (5):
+      dayName = "Friday";
+      break;
+    case (6):
+      dayName = "Saturday";
+      break;
+    default:
+      break;
+  }
+  return dayName;
+}
 //ANCHOR display today weather function
 function displayTodayWeather() {
   let today = document.getElementById("today");
   today.innerHTML = `<div class="card text-white">
   <div class="card-header bg-dark d-flex justify-content-between">
-    <h5 class="day">${days[d.getDay()]}</h5>
+    <h5 class="day">${todayWeather.date}</h5>
     <h5 class="date">${d.getDate()} ${months[d.getMonth()]}</h5>
   </div>
   <div class="card-body bg-dark">
@@ -68,7 +105,7 @@ function displayTodayWeather() {
 function displayNextDayWeather() {
   let nextDay = document.getElementById("nextDay");
   nextDay.innerHTML = `<div class="card text-white">
-  <h5 class="card-header bg-secondary text-center">${days[d.getDay() + 1]}</h5>
+  <h5 class="card-header bg-secondary text-center">${nextDayWeather.date}</h5>
   <div class="card-body bg-secondary text-center">
     <div class="weather-item-icon">
       <img src="${nextDayWeather.condition.icon}" alt="" class="mb-5 p-3" />
@@ -83,7 +120,7 @@ function displayNextDayWeather() {
 function displayNext2DayWeather() {
   let next2Day = document.getElementById("next2Day");
   next2Day.innerHTML = `<div class="card text-white">
-  <h5 class="card-header bg-dark text-center">${days[d.getDay() + 2]}</h5>
+  <h5 class="card-header bg-dark text-center">${next2DayWeather.date}</h5>
   <div class="card-body bg-dark text-center">
     <div class="weather-item-icon">
       <img src="${next2DayWeather.condition.icon}" alt="" class="mb-5 p-3" />
