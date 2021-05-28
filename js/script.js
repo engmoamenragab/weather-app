@@ -90,7 +90,7 @@ function displayTodayWeather() {
       <h6 class="today-city">${todayWeather.location}</h6>
       <h4 class="today-degree">${todayWeather.degree}<sup>o</sup>C</h4>
       <div class="weather-item-icon">
-        <img src="${todayWeather.condition.icon}" alt="" />
+        <img src="https:${todayWeather.condition.icon}" alt="" />
       </div>
     </div>
     <p class="card-text">${todayWeather.condition.text}</p>
@@ -108,7 +108,7 @@ function displayNextDayWeather() {
   <h5 class="card-header bg-secondary text-center">${nextDayWeather.date}</h5>
   <div class="card-body bg-secondary text-center">
     <div class="weather-item-icon">
-      <img src="${nextDayWeather.condition.icon}" alt="" class="mb-5 p-3" />
+      <img src="https:${nextDayWeather.condition.icon}" alt="" class="mb-5 p-3" />
     </div>
     <h5 class="card-title degree">${nextDayWeather.degree.maxDegree}<sup>o</sup>C</h5>
     <small>${nextDayWeather.degree.minDegree}<sup>o</sup>C</small>
@@ -123,7 +123,7 @@ function displayNext2DayWeather() {
   <h5 class="card-header bg-dark text-center">${next2DayWeather.date}</h5>
   <div class="card-body bg-dark text-center">
     <div class="weather-item-icon">
-      <img src="${next2DayWeather.condition.icon}" alt="" class="mb-5 p-3" />
+      <img src="https:${next2DayWeather.condition.icon}" alt="" class="mb-5 p-3" />
     </div>
     <h5 class="card-title degree">${next2DayWeather.degree.maxDegree}<sup>o</sup>C</h5>
     <small>${next2DayWeather.degree.minDegree}<sup>o</sup>C</small>
